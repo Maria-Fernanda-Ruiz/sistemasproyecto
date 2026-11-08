@@ -16,7 +16,7 @@ pendiente de que ambas lo elijan.
 |---|---|---|---|---|---|
 | T01 | Conseguir la especificación OpenAPI y el script oficial de conformidad. | Archivos oficiales guardados en el proyecto y fuente registrada. | Solicitar al curso o localizar los materiales. | Pendiente (P02) | Ambas |
 | T02 | Comparar el contrato oficial con la federación implementada. | Lista de diferencias; canvas actualizado antes de cualquier cambio de comportamiento. | T01 | Pendiente | Ambas |
-| T03 | Construir y levantar el proyecto con Docker. | `docker compose up --build` funciona y el chat responde en `localhost:8000`. | Docker Desktop disponible. | Pendiente | Ambas |
+| T03 | Construir y levantar el proyecto con Docker. | `docker compose up --build` construyó la imagen; `GET /` respondió HTTP 200 y `/fed/health` devolvió `{"server":"g1","lamport":0}` en modo local. | Docker Desktop disponible. | Completada; central no configurado | Ambas |
 | T04 | Preparar la URL pública y la configuración del central. | Central puede alcanzar las rutas del servidor; configuración sin secretos en Git. | Instrucciones y URL del curso (P05). | Pendiente | Ambas |
 | T05 | Ejecutar conformidad e interoperabilidad real. | Salida del script oficial y bitácora de mensajes entre grupos, incluyendo recuperación y duplicados observados. | T01, T02, T04 y otro grupo disponible | Pendiente | Ambas |
 | T06 | Acordar cómo se hará el experimento y cómo se contará cada resultado. | Emisor, topología, inicio/fin de repetición y reglas de pérdida/duplicado definidos y confirmados por ambas. | Disponibilidad de servidor emisor (P03) y criterio de conteo (P04) | Pendiente | Ambas |
@@ -40,7 +40,7 @@ pendiente de que ambas lo elijan.
 
 | ID | Decisión o dato | Por qué hace falta | Estado |
 |---|---|---|---|
-| P02 | ¿Cómo conseguiremos la especificación OpenAPI y el script oficial de conformidad? | La guía dice que la especificación completa prevalece sobre su resumen. | Opciones: (A) compartirlos aquí o pegar el enlace oficial —recomendado, así comparamos el contrato exacto—; (B) pedirlos al profesor/curso y, mientras llegan, avanzar con T03 (Docker); (C) seguir solo con el resumen del PDF, opción no recomendada porque deja la federación como provisional. |
+| P02 | ¿Cómo conseguiremos la especificación OpenAPI y el script oficial de conformidad? | La guía dice que la especificación completa prevalece sobre su resumen. | Opciones: (A) pedirlos al profesor/curso —recomendado, para contrastar el contrato antes de afirmar interoperabilidad—; (B) mientras llegan, avanzar con el diseño del experimento y consultar si habrá un servidor emisor; (C) seguir solo con el resumen del PDF, opción no recomendada porque deja la federación como provisional. |
 | P03 | ¿Habrá un servidor de otro grupo para emitir mensajes durante la caída? | El método del experimento de la guía depende de otro servidor. | Pendiente |
 | P04 | ¿Qué regla define mensaje perdido, recuperado o duplicado y cuándo termina cada repetición? | Sin una regla acordada, los resultados no son reproducibles. | Pendiente |
 | P05 | ¿Qué instrucciones y URL pública oficial se usarán para que el central alcance `g1`? | Docker por sí solo no publica el servidor en Internet. | Pendiente |

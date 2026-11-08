@@ -31,7 +31,7 @@ class FederationSettings:
     retry_max_seconds: int
 
     @classmethod
-    def from_environment(cls) -> FederationSettings | None:
+    def from_environment(cls) -> "FederationSettings | None":
         central_url = os.getenv("CENTRAL_URL", "").strip().rstrip("/")
         if not central_url:
             return None

@@ -96,15 +96,15 @@ Orden de trabajo acordado y estado actual:
 3. **Completado:** construir el chat local: servidor FastAPI, usuarios, mensajes, persistencia SQLite y cliente web.
 4. **Completado provisionalmente:** añadir registro, envío/recepción, Lamport, deduplicación, reintentos, health y recuperación conforme al resumen del PDF. Se probaron con un central simulado; falta cotejar OpenAPI y servicio real.
 5. **Pendiente:** verificar el contrato OpenAPI y el acceso de red; corregir primero el canvas si cambian requisitos o comportamiento acordado y luego el código.
-6. **Pendiente:** ejecutar el sistema con Docker y las verificaciones de conformidad e interoperabilidad disponibles; documentar resultados observados.
+6. **Completado en modo local:** construir la imagen y levantar el chat con Docker; `GET /` respondió HTTP 200 y `GET /fed/health` devolvió el grupo `g1` y Lamport `0`. Quedan pendientes las verificaciones de conformidad e interoperabilidad con el central.
 7. **Pendiente:** implementar y ejecutar el experimento de al menos tres repeticiones; guardar script y datos reales.
 8. **Pendiente:** completar la bitácora, el guion y el póster en su plantilla original, usando evidencias reales.
 
-Las 13 pruebas automatizadas pasaron con el entorno local y `docker compose config` validó la configuración. La imagen no se construyó porque Docker no estaba activo. Estos resultados no sustituyen la prueba con el central del curso.
+Las 13 pruebas automatizadas pasaron previamente con el entorno local y `docker compose config` validó la configuración. En esta sesión la imagen se construyó y el contenedor respondió correctamente en modo local. La federación no se probó porque `CENTRAL_URL` no está configurado; estos resultados no sustituyen la prueba con el central del curso.
 
 La disponibilidad de un servidor de otro equipo para enviar mensajes durante la caída aún se desconoce. No se debe reemplazar el método indicado por la guía por una simulación sin etiquetarla claramente y revisar primero si cumple el objetivo del curso.
 
-Las etapas local y de federación provisional se implementaron después de aprobar el canvas y el análisis. Las pruebas unitarias pasan con un central simulado y `docker compose config` valida la configuración. La construcción y ejecución del contenedor quedan pendientes porque el daemon de Docker no está activo en el equipo. La integración con el central real no está comprobada.
+Las etapas local y de federación provisional se implementaron después de aprobar el canvas y el análisis. Las pruebas unitarias pasan con un central simulado y `docker compose config` valida la configuración. La imagen se construyó con Python 3.12 y el contenedor respondió en modo local; la integración con el central real no está comprobada.
 
 ## N — Norms
 

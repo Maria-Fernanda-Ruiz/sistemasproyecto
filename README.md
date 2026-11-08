@@ -14,7 +14,7 @@ el servidor central del curso.
 | Entregable | Dónde está | Estado |
 |---|---|---|
 | Servidor y cliente del chat | [`app/`](app/) | Implementados |
-| Ejecución con Docker Compose | [`Dockerfile`](Dockerfile), [`docker-compose.yml`](docker-compose.yml) | Configuración validada; imagen aún no construida |
+| Ejecución con Docker Compose | [`Dockerfile`](Dockerfile), [`docker-compose.yml`](docker-compose.yml) | Imagen construida; chat local verificado por HTTP |
 | Instrucciones y variables de entorno | Este README, [`.env.example`](.env.example) | Disponibles; federación sujeta a validación |
 | Diagrama de arquitectura | [`docs/arquitectura.md`](docs/arquitectura.md) | Disponible |
 | Pruebas automatizadas | [`tests/`](tests/) | 13 pruebas pasaron en la última validación; usan federación simulada |
@@ -119,8 +119,9 @@ Los datos se guardan en el volumen Docker `chat-data` y se conservan al
 reiniciar. `docker compose down` elimina el contenedor, pero conserva el
 volumen. No uses `docker compose down -v` si quieres conservar el historial.
 
-**Nota:** la configuración de Docker Compose fue validada, pero la imagen aún
-no se ha construido en este equipo porque Docker no estaba activo.
+**Verificación local:** la imagen se construyó correctamente. El contenedor
+respondió `HTTP 200` en `/` y `/fed/health` devolvió `{"server":"g1","lamport":0}`.
+Esta prueba fue en modo local, sin conexión configurada con el servidor central.
 
 ## Configuración de la federación
 
