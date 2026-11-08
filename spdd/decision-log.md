@@ -33,7 +33,7 @@ Las decisiones confirmadas registran elecciones del equipo; las decisiones propu
 | D24 | Documentos SPDD iniciales | Crear requisitos, análisis, canvas REASONS y este log dentro de la carpeta del proyecto. | Confirmada | La estudiante autorizó crear estos cuatro documentos iniciales. |
 | D25 | Protocolo completo del central | Avanzar con el resumen de la guía y señalar lo que falta validar; no afirmar interoperabilidad comprobada sin evidencia. | Confirmada | La estudiante pidió avanzar para la entrega próxima. |
 | D26 | Alcance del cliente | Limitar el frontend a un cliente web sencillo para enviar y leer mensajes de `#general`; no crear vistas adicionales de tablero. | Confirmada; reemplaza D17 | La estudiante pidió seguir el alcance del PDF (pág. 2), que admite una página web mínima. |
-| D27 | Forma de trabajo del equipo | Inicialmente se acordó trabajar juntas; el 8 de noviembre la estudiante indicó que quieren dividir las tareas pendientes. La asignación aún no se confirma. | En revisión; reemplazar cuando acuerden el reparto | La estudiante pidió primero organizar lo hecho y lo pendiente y después repartir tareas. |
+| D27 | Forma de trabajo del equipo | Inicialmente se propuso que ambas trabajaran juntas sin áreas separadas. | Reemplazada por D37 | La estudiante después pidió dividir las tareas pendientes. |
 | D28 | Código de partida | No hay código existente; se comienza desde cero, tomando la guía como fuente de requisitos. | Confirmada | La estudiante indicó que solo dispone del PDF y los materiales compartidos. |
 | D29 | Servidor emisor del experimento | Aún no se sabe si otro equipo podrá prestar su servidor para generar mensajes mientras `g1` está detenido. | Pendiente | La guía describe el envío desde otro servidor durante la caída (pág. 5); no se inventará una alternativa como si fuera el método del curso. |
 | D30 | Aprobación del canvas REASONS | El equipo aprueba el canvas actual como diseño para preparar la implementación. | Confirmada el 7 de noviembre de 2026 | Aprobación expresa de la estudiante. |
@@ -42,7 +42,8 @@ Las decisiones confirmadas registran elecciones del equipo; las decisiones propu
 | D33 | Federación provisional | Implementar registro, heartbeat, envío y recepción, Lamport, deduplicación, reintentos y recuperación de historial con los campos y rutas resumidos en el PDF. La respuesta de historial se trata como lista JSON directa provisional. | Implementada; requiere validación externa | La estudiante aprobó avanzar según el PDF y eligió el supuesto de respuesta directa para `GET /history`. No se afirma interoperabilidad real. |
 | D34 | Entrega de documentación técnica | Añadir README de ejecución y variables de entorno y un diagrama de arquitectura; marcar en ellos las validaciones todavía pendientes. | Borradores creados | Son entregables indicados por la guía (págs. 7–8); no incluyen resultados experimentales ni de interoperabilidad no obtenidos. |
 | D35 | Organización SPDD | Organizar los documentos como requisitos, análisis, prompt/canvas por historia, plantilla REASONS e índice con enlaces, siguiendo la forma documental observada en `agregador-resiliente`; no trasladar su contenido ni sus decisiones. | Confirmada el 8 de noviembre de 2026 | La estudiante autorizó adaptar la organización después de revisar ese repositorio en modo solo lectura. |
-| D36 | Plan de entrega | Enumerar tareas restantes, resultados verificables, dependencias y decisiones pendientes en un plan enlazado desde el índice SPDD; dejar responsables sin asignar hasta que Maria y Karen acuerden el reparto. | Confirmada el 8 de noviembre de 2026 | La estudiante pidió organizar primero el trabajo y luego distribuir las tareas. |
+| D36 | Plan de entrega | Enumerar tareas restantes, resultados verificables, dependencias y decisiones pendientes en un plan enlazado desde el índice SPDD. La versión inicial dejó responsables sin asignar. | Confirmada el 8 de noviembre de 2026; estado de asignación reemplazado por D37 | La estudiante pidió organizar primero el trabajo y luego distribuir las tareas. |
+| D37 | Reparto inicial de tareas pendientes | Maria se encarga de OpenAPI, federación, Docker, URL pública, conformidad, interoperabilidad y experimento; Karen prepara el borrador del póster y el guion. Ambas acuerdan método experimental y revisión final. | Indicado por Maria el 8 de noviembre de 2026; pendiente de confirmación de Karen | Maria pidió quedarse con la mayoría y dejar a Karen encargos claros para trabajar con su IA. |
 
 ## Preguntas pendientes
 
@@ -57,7 +58,7 @@ Las decisiones confirmadas registran elecciones del equipo; las decisiones propu
 | P07 | ¿Qué resultados reales producirán las tres o más repeticiones? | No pueden completarse antes de ejecutar el experimento. | Pendiente |
 | P08 | ¿Qué decisiones exactas de API local y estructura de carpetas se aprueban? | Se definirán antes de implementar cada etapa. | Resuelta: API local y estructura aprobadas antes de su implementación |
 | P09 | ¿Qué contenido concreto irá en el guion de sustentación y en la plantilla del póster? | No se han compartido un guion ni resultados; cualquier edición debe aprobarse antes. | Pendiente |
-| P11 | ¿Qué tareas acepta Maria y cuáles acepta Karen? | Las tareas necesitan responsables acordados; el plan enumera las dependencias, pero no asigna trabajo por ellas. | Pendiente |
+| P11 | ¿Karen confirma el reparto indicado por Maria? | Permite asegurar que las tareas asignadas y sus dependencias son claras para ambas integrantes. | Pendiente de compartir con Karen |
 
 ## Registro de cambios
 
@@ -69,4 +70,4 @@ Las decisiones confirmadas registran elecciones del equipo; las decisiones propu
 - README y diagrama de arquitectura disponibles. Pruebas con central simulado no equivalen a interoperabilidad con el central del curso.
 - El repositorio es público y la rama `compartir/proyecto-inicial` contiene la versión inicial. La estudiante confirma que Karen (Angélica) ya es colaboradora.
 - El README contiene los nombres completos de Maria Fernanda Ruiz Velasquez y Karen Angelica Sandoval Martinez.
-- Se creó `plan-entrega.md` con tareas pendientes, evidencias, dependencias y decisiones; aún no se asignaron responsables.
+- Se creó `plan-entrega.md` con tareas pendientes, evidencias, dependencias y responsables propuestos por Maria; el reparto queda pendiente de confirmación de Karen.

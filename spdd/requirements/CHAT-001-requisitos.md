@@ -83,7 +83,7 @@ La guía pide incluir el libro de texto en las referencias del póster (pág. 8)
 
 ## Entrega y trabajo del equipo
 
-El equipo está formado por Maria Fernanda Ruiz Velasquez y Karen Angelica Sandoval Martinez. El equipo quiere dividir las tareas pendientes; la distribución concreta está por acordar. Los commits deben reflejar el trabajo real de cada integrante. No había código previo al inicio de la implementación; el código actual se encuentra en la carpeta `app/`.
+El equipo está formado por Maria Fernanda Ruiz Velasquez y Karen Angelica Sandoval Martinez. Maria indicó que llevará la mayoría de las tareas técnicas; Karen preparará el borrador del póster y el guion, sujeto a que ella confirme el reparto. Los commits deben reflejar el trabajo real de cada integrante. No había código previo al inicio de la implementación; el código actual se encuentra en la carpeta `app/`.
 
 El repositorio `Maria-Fernanda-Ruiz/sistemasproyecto` es público. La versión inicial está publicada en la rama `compartir/proyecto-inicial`. La estudiante confirma que Karen (Angélica) ya tiene acceso como colaboradora.
 

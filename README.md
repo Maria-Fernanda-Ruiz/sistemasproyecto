@@ -56,10 +56,11 @@ Los documentos SPDD y el log de decisiones están organizados en
 | Maria Fernanda Ruiz Velasquez |
 | Karen Angelica Sandoval Martinez |
 
-El equipo quiere dividir las tareas pendientes; el reparto aún está por acordar.
-El [plan de entrega](spdd/plan-entrega.md) enumera tareas, dependencias y
-decisiones abiertas. El repositorio es público y Karen (Angélica) ya tiene
-acceso como colaboradora, según confirmó Maria.
+Maria llevará la mayor parte de las tareas técnicas; Karen (Angélica) preparará
+el borrador del póster y el guion con evidencias verificadas. El reparto está
+registrado en el [plan de entrega](spdd/plan-entrega.md) y queda pendiente de
+confirmación de Karen. El repositorio es público y Karen ya tiene acceso como
+colaboradora, según confirmó Maria.
 
 ## Qué construimos
 
