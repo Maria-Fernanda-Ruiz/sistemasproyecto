@@ -49,9 +49,14 @@ Los documentos SPDD y el log de decisiones están organizados en
 
 ## Integrantes
 
-La estudiante y Angélica trabajan juntas en las etapas del proyecto. No se han
-asignado áreas de trabajo separadas. El repositorio es público para que ambas
-puedan consultarlo; Angélica no ha sido invitada como colaboradora.
+| Integrante |
+|---|
+| Maria Fernanda Ruiz Velasquez |
+| Karen Angelica Sandoval Martinez |
+
+Ambas trabajan juntas en las etapas del proyecto; no se han asignado áreas
+separadas. El repositorio es público para que ambas puedan consultarlo; Karen
+no ha sido invitada como colaboradora.
 
 ## Qué construimos
 
