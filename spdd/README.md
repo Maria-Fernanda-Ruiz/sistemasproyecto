@@ -14,7 +14,7 @@ el contenido y las decisiones pertenecen a este proyecto.
 | [Canvas REASONS CHAT-001](prompt/CHAT-001-chat-distribuido.md) | Entidades, enfoque, estructura, operaciones, normas y salvaguardas del chat. | Aprobado; implementación local y federación provisional realizadas |
 | [Plantilla REASONS](template/REASONS-canvas.md) | Estructura vacía para canvases futuros. | Referencia |
 | [Log de decisiones](decision-log.md) | Decisiones confirmadas, propuestas, preguntas pendientes y cambios de estado. | Vivo |
-| [Plan de entrega](plan-entrega.md) | Tareas verificables que faltan, dependencias, responsables indicados por Maria y encargos claros para Karen. | En organización; falta confirmación de Karen |
+| [Plan de entrega](plan-entrega.md) | Tareas verificables que faltan, dependencias y decisiones abiertas con opciones y recomendaciones. | En organización con responsabilidad compartida |
 
 ## Flujo y control de cambios
 
