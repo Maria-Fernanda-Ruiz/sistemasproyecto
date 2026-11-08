@@ -25,6 +25,8 @@ el servidor central del curso.
 
 La lista completa de requisitos y sus páginas de origen está en
 [CHAT-001-requisitos.md](spdd/requirements/CHAT-001-requisitos.md).
+Las tareas para terminar la entrega, sus dependencias y las decisiones abiertas
+están en el [plan de entrega](spdd/plan-entrega.md).
 
 ## Estado y flujo SPDD
 
@@ -54,9 +56,11 @@ Los documentos SPDD y el log de decisiones están organizados en
 | Maria Fernanda Ruiz Velasquez |
 | Karen Angelica Sandoval Martinez |
 
-Ambas trabajan juntas en las etapas del proyecto; no se han asignado áreas
-separadas. El repositorio es público para que ambas puedan consultarlo; Karen
-no ha sido invitada como colaboradora.
+El equipo quiere dividir las tareas pendientes; el reparto aún está por acordar.
+El [plan de entrega](spdd/plan-entrega.md) enumera tareas, dependencias y
+decisiones abiertas. El repositorio es público para que ambas puedan
+consultarlo; para que Karen pueda subir cambios directamente falta su usuario
+exacto de GitHub y enviar la invitación de colaboradora.
 
 ## Qué construimos
 

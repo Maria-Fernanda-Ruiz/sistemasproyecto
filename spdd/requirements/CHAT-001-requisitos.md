@@ -83,9 +83,9 @@ La guía pide incluir el libro de texto en las referencias del póster (pág. 8)
 
 ## Entrega y trabajo del equipo
 
-El equipo está formado por dos integrantes: la estudiante y Angélica. Ambas trabajarán juntas en las etapas, incluida la programación; los commits deberán reflejar el trabajo real de ambas. No había código previo al inicio de la implementación; el código actual se encuentra en la carpeta `app/`.
+El equipo está formado por Maria Fernanda Ruiz Velasquez y Karen Angelica Sandoval Martinez. El equipo quiere dividir las tareas pendientes; la distribución concreta está por acordar. Los commits deben reflejar el trabajo real de cada integrante. No había código previo al inicio de la implementación; el código actual se encuentra en la carpeta `app/`.
 
-El repositorio `Maria-Fernanda-Ruiz/sistemasproyecto` es público. La versión inicial está publicada en la rama `compartir/proyecto-inicial`; Angélica puede verla y clonarla. No se ha enviado una invitación de colaboradora.
+El repositorio `Maria-Fernanda-Ruiz/sistemasproyecto` es público. La versión inicial está publicada en la rama `compartir/proyecto-inicial`; Karen puede verla y clonarla. Para que pueda subir cambios directamente se necesita invitarla como colaboradora; falta su usuario exacto de GitHub.
 
 ## Estado de implementación
 

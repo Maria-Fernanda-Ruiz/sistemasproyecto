@@ -114,14 +114,14 @@ Las etapas local y de federación provisional se implementaron después de aprob
 - Escribir logs legibles con ID y marca Lamport para envío, recepción, reintento y descarte.
 - Conservar trazabilidad entre requisitos, decisiones, análisis, canvas, código y pruebas.
 - No afirmar que una prueba con otros grupos ocurrió si no se realizó.
-- Ambas integrantes deben poder explicar el código y participar en commits que reflejen su trabajo real.
+- Ambas integrantes deben poder explicar el código y participar en commits que reflejen su trabajo real; las tareas pendientes se asignarán después de acordar el reparto.
 - No copiar código del repositorio de referencia ni compartir código con otros grupos.
 
 ## S — Safeguards
 
 - No cambiar la guía ni la plantilla original. Cualquier edición propuesta para el póster debe explicarse y aprobarse antes.
 - La estudiante autorizó hacer público el repositorio y publicar la versión inicial en `compartir/proyecto-inicial`; no se publicó directamente a `main`.
-- No se ha invitado a Angélica como colaboradora. El repositorio público permite que lo vea y lo clone.
+- El repositorio público permite que Karen vea y clone el proyecto. No se ha enviado una invitación de colaboradora porque falta su usuario exacto de GitHub.
 - No modificar ni copiar proyectos de referencia; `agregador-resiliente` se consultó en modo solo lectura para observar su organización SPDD.
 - No asumir que la especificación OpenAPI está disponible: no se encontró entre los materiales actuales.
 - No inventar campos, códigos de estado, autenticación, rutas o semántica del protocolo más allá de lo expresamente resumido por la guía.

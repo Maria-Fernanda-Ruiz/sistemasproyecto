@@ -53,7 +53,7 @@ En la revisión inicial no había código fuente, guion, resultados de experimen
 - Descripción: “Proyecto académico de sistemas distribuidos: requisitos, análisis, póster y código, organizados con metodología SPDD”.
 - Visibilidad actual: pública, tras autorización expresa de la estudiante el 8 de noviembre de 2026.
 - El repositorio remoto `Maria-Fernanda-Ruiz/sistemasproyecto` existe. La versión inicial se publicó en `compartir/proyecto-inicial`; `main` no recibió ese push.
-- Equipo de dos integrantes: la estudiante y Angélica; ambas trabajan en código.
+- Equipo de dos integrantes: Maria Fernanda Ruiz Velasquez y Karen Angelica Sandoval Martinez. Quieren dividir las tareas pendientes; la asignación aún está por acordar.
 - Código corto elegido y confirmado para el servidor: `g1`.
 - Experimento: tema de pérdidas/duplicados; se usa como pregunta de borrador la pregunta de la guía (pág. 5).
 - Hipótesis esperada: después de una caída temporal, `g1` recupera los mensajes enviados durante la interrupción y cada mensaje aparece una sola vez.
@@ -65,7 +65,7 @@ En la revisión inicial no había código fuente, guion, resultados de experimen
 - Persistencia con SQLite en volumen Docker.
 - Backend con Python y FastAPI.
 - Las decisiones anteriores no modifican requisitos impuestos por la guía; son elecciones del equipo.
-- No había código previo; la etapa local inicial partió desde cero. Ambas integrantes trabajarán juntas en las etapas de programación.
+- No había código previo; la etapa local inicial partió desde cero. El reparto de las tareas restantes todavía no está decidido.
 
 ## 5. Suposiciones que no se deben tratar como hechos
 

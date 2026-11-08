@@ -10,9 +10,9 @@ Las decisiones confirmadas registran elecciones del equipo; las decisiones propu
 | D01 | Nombre visible del proyecto | “Proyecto de sistemas distribuidos”. | Confirmada | Elección de la estudiante. |
 | D02 | Nombre técnico del repositorio/carpeta | `proyecto-sistemas-distribuidos`. | Confirmada | El nombre técnico no usa espacios; el título visible conserva los espacios. |
 | D03 | Descripción | “Proyecto académico de sistemas distribuidos: requisitos, análisis, póster y código, organizados con metodología SPDD”. | Confirmada | Texto elegido por la estudiante. |
-| D04 | Visibilidad | Inicialmente privada; cambiada a pública el 8 de noviembre de 2026 para compartir el proyecto con Angélica. | Reemplazada | La estudiante autorizó hacer público el repositorio. |
+| D04 | Visibilidad | Inicialmente privada; cambiada a pública el 8 de noviembre de 2026 para compartir el proyecto con Karen. | Reemplazada | La estudiante autorizó hacer público el repositorio. |
 | D05 | Control y publicación de GitHub | La estudiante conserva el control del repositorio. Por petición expresa, la versión inicial se publicó en `compartir/proyecto-inicial` de `Maria-Fernanda-Ruiz/sistemasproyecto`; no se hizo push directo a `main`. | Confirmada | Instrucciones de la estudiante y autorización de publicación. |
-| D06 | Integrantes | Dos integrantes: la estudiante y Angélica; ambas trabajan en código. | Confirmada | La estudiante indicó el equipo y que ambas programan. |
+| D06 | Integrantes | Maria Fernanda Ruiz Velasquez y Karen Angelica Sandoval Martinez. | Confirmada | La estudiante indicó los nombres completos. |
 | D07 | Identificador de grupo | `g1`. | Confirmada; disponibilidad confirmada por la estudiante | La guía usa identificadores cortos como `g1` (pág. 2); el curso/equipo confirmó que este valor está disponible. |
 | D08 | Pregunta experimental | Usar la pregunta de la guía: «¿Cuántos mensajes se pierden o se duplican cuando el servidor del grupo se cae durante unos segundos?» | Confirmada | Se elige una de las preguntas propuestas en la guía (pág. 5); conecta el experimento con tolerancia a fallos. |
 | D09 | Hipótesis | Se espera que tras una caída temporal `g1` recupere los mensajes enviados durante la interrupción y cada mensaje aparezca una sola vez. | Confirmada como expectativa, no como resultado | Responde a “lo que el grupo espera observar” (pág. 6) y al campo hipótesis del póster (pág. 8). |
@@ -33,7 +33,7 @@ Las decisiones confirmadas registran elecciones del equipo; las decisiones propu
 | D24 | Documentos SPDD iniciales | Crear requisitos, análisis, canvas REASONS y este log dentro de la carpeta del proyecto. | Confirmada | La estudiante autorizó crear estos cuatro documentos iniciales. |
 | D25 | Protocolo completo del central | Avanzar con el resumen de la guía y señalar lo que falta validar; no afirmar interoperabilidad comprobada sin evidencia. | Confirmada | La estudiante pidió avanzar para la entrega próxima. |
 | D26 | Alcance del cliente | Limitar el frontend a un cliente web sencillo para enviar y leer mensajes de `#general`; no crear vistas adicionales de tablero. | Confirmada; reemplaza D17 | La estudiante pidió seguir el alcance del PDF (pág. 2), que admite una página web mínima. |
-| D27 | Forma de trabajo del equipo | La estudiante y Angélica trabajarán juntas en las etapas, incluida la programación, en vez de dividirse el proyecto en dos áreas fijas. | Confirmada | Preferencia del equipo. Los commits deben reflejar el trabajo real de ambas. |
+| D27 | Forma de trabajo del equipo | Inicialmente se acordó trabajar juntas; el 8 de noviembre la estudiante indicó que quieren dividir las tareas pendientes. La asignación aún no se confirma. | En revisión; reemplazar cuando acuerden el reparto | La estudiante pidió primero organizar lo hecho y lo pendiente y después repartir tareas. |
 | D28 | Código de partida | No hay código existente; se comienza desde cero, tomando la guía como fuente de requisitos. | Confirmada | La estudiante indicó que solo dispone del PDF y los materiales compartidos. |
 | D29 | Servidor emisor del experimento | Aún no se sabe si otro equipo podrá prestar su servidor para generar mensajes mientras `g1` está detenido. | Pendiente | La guía describe el envío desde otro servidor durante la caída (pág. 5); no se inventará una alternativa como si fuera el método del curso. |
 | D30 | Aprobación del canvas REASONS | El equipo aprueba el canvas actual como diseño para preparar la implementación. | Confirmada el 7 de noviembre de 2026 | Aprobación expresa de la estudiante. |
@@ -42,6 +42,7 @@ Las decisiones confirmadas registran elecciones del equipo; las decisiones propu
 | D33 | Federación provisional | Implementar registro, heartbeat, envío y recepción, Lamport, deduplicación, reintentos y recuperación de historial con los campos y rutas resumidos en el PDF. La respuesta de historial se trata como lista JSON directa provisional. | Implementada; requiere validación externa | La estudiante aprobó avanzar según el PDF y eligió el supuesto de respuesta directa para `GET /history`. No se afirma interoperabilidad real. |
 | D34 | Entrega de documentación técnica | Añadir README de ejecución y variables de entorno y un diagrama de arquitectura; marcar en ellos las validaciones todavía pendientes. | Borradores creados | Son entregables indicados por la guía (págs. 7–8); no incluyen resultados experimentales ni de interoperabilidad no obtenidos. |
 | D35 | Organización SPDD | Organizar los documentos como requisitos, análisis, prompt/canvas por historia, plantilla REASONS e índice con enlaces, siguiendo la forma documental observada en `agregador-resiliente`; no trasladar su contenido ni sus decisiones. | Confirmada el 8 de noviembre de 2026 | La estudiante autorizó adaptar la organización después de revisar ese repositorio en modo solo lectura. |
+| D36 | Plan de entrega | Enumerar tareas restantes, resultados verificables, dependencias y decisiones pendientes en un plan enlazado desde el índice SPDD; dejar responsables sin asignar hasta que Maria y Karen acuerden el reparto. | Confirmada el 8 de noviembre de 2026 | La estudiante pidió organizar primero el trabajo y luego distribuir las tareas. |
 
 ## Preguntas pendientes
 
@@ -54,8 +55,10 @@ Las decisiones confirmadas registran elecciones del equipo; las decisiones propu
 | P05 | ¿Qué mecanismo/instrucciones de Cloudflare harán alcanzable desde el central la URL de `g1`? | La guía pide configurar una URL pública para el servidor del grupo (pág. 3); Docker ejecuta los contenedores, pero no establece por sí solo el acceso público. | Pendiente; se confirmó que el curso usa Cloudflare, pero no se tienen URL ni instrucciones concretas |
 | P06 | ¿Cuál es el libro de texto del curso que debe citarse en el póster? | El póster debe incluir el libro de texto (pág. 8). | Resuelta: la estudiante compartió el PDF *Understanding Distributed Systems*, 2.ª edición, de Roberto Vitillo. Referencia provisional: Vitillo, R. (2022). *Understanding Distributed Systems: What Every Developer Should Know About Large Distributed Applications* (2.ª ed., versión 2.0.0). |
 | P07 | ¿Qué resultados reales producirán las tres o más repeticiones? | No pueden completarse antes de ejecutar el experimento. | Pendiente |
-| P08 | ¿Qué decisiones exactas de API local y estructura de carpetas se aprueban? | Se definirán antes de implementar cada etapa; ambas integrantes ya acordaron trabajar juntas. | Resuelta: API local y estructura aprobadas antes de su implementación |
+| P08 | ¿Qué decisiones exactas de API local y estructura de carpetas se aprueban? | Se definirán antes de implementar cada etapa. | Resuelta: API local y estructura aprobadas antes de su implementación |
 | P09 | ¿Qué contenido concreto irá en el guion de sustentación y en la plantilla del póster? | No se han compartido un guion ni resultados; cualquier edición debe aprobarse antes. | Pendiente |
+| P10 | ¿Cuál es el usuario exacto de GitHub de Karen para invitarla como colaboradora? | El repositorio público permite leer y clonar; se requiere el nombre de usuario para conceder permiso de escritura. | Pendiente |
+| P11 | ¿Qué tareas acepta Maria y cuáles acepta Karen? | Las tareas necesitan responsables acordados; el plan enumera las dependencias, pero no asigna trabajo por ellas. | Pendiente |
 
 ## Registro de cambios
 
@@ -65,4 +68,6 @@ Las decisiones confirmadas registran elecciones del equipo; las decisiones propu
 - El análisis queda aprobado el 7 de noviembre de 2026.
 - Se implementan chat local y federación provisional. Las 13 pruebas automatizadas pasan; la configuración de Compose valida, pero el build no se ejecutó porque Docker no está activo.
 - README y diagrama de arquitectura disponibles. Pruebas con central simulado no equivalen a interoperabilidad con el central del curso.
-- El repositorio es público y la rama `compartir/proyecto-inicial` contiene la versión inicial; no se ha invitado a Angélica como colaboradora.
+- El repositorio es público y la rama `compartir/proyecto-inicial` contiene la versión inicial; todavía no se ha enviado una invitación de colaboradora a Karen.
+- El README contiene los nombres completos de Maria Fernanda Ruiz Velasquez y Karen Angelica Sandoval Martinez. Karen puede leer y clonar el repositorio público; falta su usuario para invitarla con permiso de escritura.
+- Se creó `plan-entrega.md` con tareas pendientes, evidencias, dependencias y decisiones; aún no se asignaron responsables.
