@@ -1,0 +1,20 @@
+services:
+  chat:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      GROUP_ID: ${GROUP_ID:-g1}
+      CENTRAL_URL: ${CENTRAL_URL:-}
+      PUBLIC_URL: ${PUBLIC_URL:-}
+      HEALTH_INTERVAL_SECONDS: ${HEALTH_INTERVAL_SECONDS:-5}
+      HEALTH_FAILURE_THRESHOLD: ${HEALTH_FAILURE_THRESHOLD:-3}
+      REGISTRATION_INTERVAL_SECONDS: ${REGISTRATION_INTERVAL_SECONDS:-30}
+      RETRY_INITIAL_SECONDS: ${RETRY_INITIAL_SECONDS:-1}
+      RETRY_MAX_SECONDS: ${RETRY_MAX_SECONDS:-30}
+      CHAT_DB_PATH: /data/chat.sqlite3
+    volumes:
+      - chat-data:/data
+
+volumes:
+  chat-data:

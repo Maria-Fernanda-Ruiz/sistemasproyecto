@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#6254d9">
+    <title>Chat de grupo · #general</title>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">#</div>
+          <div>
+            <p class="eyebrow">CHAT DEL GRUPO</p>
+            <h1>Lobby <span>#general</span></h1>
+          </div>
+        </div>
+        <div class="connection-pill">
+          <span class="connection-dot" aria-hidden="true"></span>
+          <span>Servidor local · g1</span>
+        </div>
+      </header>
+
+      <section class="chat-card" aria-label="Chat global">
+        <div class="room-heading">
+          <div>
+            <p class="eyebrow">SALA GLOBAL</p>
+            <h2>#general</h2>
+          </div>
+          <p class="room-note">Etapa local · conexión al central pendiente</p>
+        </div>
+
+        <section class="identity-panel" aria-label="Usuario">
+          <form id="user-form" class="user-form">
+            <label for="username">Elige tu nombre de usuario</label>
+            <div class="inline-controls">
+              <input
+                id="username"
+                name="username"
+                autocomplete="nickname"
+                maxlength="32"
+                placeholder="Por ejemplo, ana"
+                required
+              >
+              <button class="button button-secondary" type="submit">Entrar al chat</button>
+            </div>
+            <p class="form-hint">Usa letras, números, punto, guion o guion bajo.</p>
+          </form>
+          <div id="current-user" class="current-user" hidden>
+            <span class="avatar" aria-hidden="true">★</span>
+            <div>
+              <p class="eyebrow">ESCRIBES COMO</p>
+              <strong id="identity-label"></strong>
+            </div>
+          </div>
+        </section>
+
+        <div id="status-message" class="status-message" role="status" aria-live="polite">
+          Elige un nombre para comenzar.
+        </div>
+
+        <section
+          id="messages"
+          class="messages"
+          aria-label="Mensajes"
+          aria-live="polite"
+        ></section>
+
+        <form id="message-form" class="message-form">
+          <label class="sr-only" for="message-body">Escribe un mensaje</label>
+          <input
+            id="message-body"
+            name="body"
+            maxlength="2000"
+            placeholder="Escribe un mensaje..."
+            autocomplete="off"
+            disabled
+            required
+          >
+          <button class="button button-primary" type="submit" disabled>
+            Enviar <span aria-hidden="true">➤</span>
+          </button>
+        </form>
+      </section>
+
+      <footer class="footer-note">
+        <span class="sparkle" aria-hidden="true">✦</span>
+        Esta etapa permite probar el chat del grupo antes de conectarlo al servidor central.
+      </footer>
+    </main>
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>
