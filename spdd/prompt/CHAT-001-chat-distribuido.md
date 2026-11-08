@@ -121,7 +121,7 @@ Las etapas local y de federación provisional se implementaron después de aprob
 
 - No cambiar la guía ni la plantilla original. Cualquier edición propuesta para el póster debe explicarse y aprobarse antes.
 - La estudiante autorizó hacer público el repositorio y publicar la versión inicial en `compartir/proyecto-inicial`; no se publicó directamente a `main`.
-- El repositorio público permite que Karen vea y clone el proyecto. No se ha enviado una invitación de colaboradora porque falta su usuario exacto de GitHub.
+- La estudiante confirma que Karen (Angélica) ya tiene acceso como colaboradora del repositorio.
 - No modificar ni copiar proyectos de referencia; `agregador-resiliente` se consultó en modo solo lectura para observar su organización SPDD.
 - No asumir que la especificación OpenAPI está disponible: no se encontró entre los materiales actuales.
 - No inventar campos, códigos de estado, autenticación, rutas o semántica del protocolo más allá de lo expresamente resumido por la guía.

@@ -11,7 +11,7 @@ Las decisiones confirmadas registran elecciones del equipo; las decisiones propu
 | D02 | Nombre técnico del repositorio/carpeta | `proyecto-sistemas-distribuidos`. | Confirmada | El nombre técnico no usa espacios; el título visible conserva los espacios. |
 | D03 | Descripción | “Proyecto académico de sistemas distribuidos: requisitos, análisis, póster y código, organizados con metodología SPDD”. | Confirmada | Texto elegido por la estudiante. |
 | D04 | Visibilidad | Inicialmente privada; cambiada a pública el 8 de noviembre de 2026 para compartir el proyecto con Karen. | Reemplazada | La estudiante autorizó hacer público el repositorio. |
-| D05 | Control y publicación de GitHub | La estudiante conserva el control del repositorio. Por petición expresa, la versión inicial se publicó en `compartir/proyecto-inicial` de `Maria-Fernanda-Ruiz/sistemasproyecto`; no se hizo push directo a `main`. | Confirmada | Instrucciones de la estudiante y autorización de publicación. |
+| D05 | Control y publicación de GitHub | La estudiante conserva el control del repositorio. Por petición expresa, la versión inicial se publicó en `compartir/proyecto-inicial` de `Maria-Fernanda-Ruiz/sistemasproyecto`; no se hizo push directo a `main`. La estudiante confirma que Karen (Angélica) ya es colaboradora. | Confirmada | Instrucciones de la estudiante y autorización de publicación; el acceso de Karen lo confirmó la estudiante el 8 de noviembre de 2026. |
 | D06 | Integrantes | Maria Fernanda Ruiz Velasquez y Karen Angelica Sandoval Martinez. | Confirmada | La estudiante indicó los nombres completos. |
 | D07 | Identificador de grupo | `g1`. | Confirmada; disponibilidad confirmada por la estudiante | La guía usa identificadores cortos como `g1` (pág. 2); el curso/equipo confirmó que este valor está disponible. |
 | D08 | Pregunta experimental | Usar la pregunta de la guía: «¿Cuántos mensajes se pierden o se duplican cuando el servidor del grupo se cae durante unos segundos?» | Confirmada | Se elige una de las preguntas propuestas en la guía (pág. 5); conecta el experimento con tolerancia a fallos. |
@@ -57,7 +57,6 @@ Las decisiones confirmadas registran elecciones del equipo; las decisiones propu
 | P07 | ¿Qué resultados reales producirán las tres o más repeticiones? | No pueden completarse antes de ejecutar el experimento. | Pendiente |
 | P08 | ¿Qué decisiones exactas de API local y estructura de carpetas se aprueban? | Se definirán antes de implementar cada etapa. | Resuelta: API local y estructura aprobadas antes de su implementación |
 | P09 | ¿Qué contenido concreto irá en el guion de sustentación y en la plantilla del póster? | No se han compartido un guion ni resultados; cualquier edición debe aprobarse antes. | Pendiente |
-| P10 | ¿Cuál es el usuario exacto de GitHub de Karen para invitarla como colaboradora? | El repositorio público permite leer y clonar; se requiere el nombre de usuario para conceder permiso de escritura. | Pendiente |
 | P11 | ¿Qué tareas acepta Maria y cuáles acepta Karen? | Las tareas necesitan responsables acordados; el plan enumera las dependencias, pero no asigna trabajo por ellas. | Pendiente |
 
 ## Registro de cambios
@@ -68,6 +67,6 @@ Las decisiones confirmadas registran elecciones del equipo; las decisiones propu
 - El análisis queda aprobado el 7 de noviembre de 2026.
 - Se implementan chat local y federación provisional. Las 13 pruebas automatizadas pasan; la configuración de Compose valida, pero el build no se ejecutó porque Docker no está activo.
 - README y diagrama de arquitectura disponibles. Pruebas con central simulado no equivalen a interoperabilidad con el central del curso.
-- El repositorio es público y la rama `compartir/proyecto-inicial` contiene la versión inicial; todavía no se ha enviado una invitación de colaboradora a Karen.
-- El README contiene los nombres completos de Maria Fernanda Ruiz Velasquez y Karen Angelica Sandoval Martinez. Karen puede leer y clonar el repositorio público; falta su usuario para invitarla con permiso de escritura.
+- El repositorio es público y la rama `compartir/proyecto-inicial` contiene la versión inicial. La estudiante confirma que Karen (Angélica) ya es colaboradora.
+- El README contiene los nombres completos de Maria Fernanda Ruiz Velasquez y Karen Angelica Sandoval Martinez.
 - Se creó `plan-entrega.md` con tareas pendientes, evidencias, dependencias y decisiones; aún no se asignaron responsables.

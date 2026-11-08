@@ -58,9 +58,8 @@ Los documentos SPDD y el log de decisiones están organizados en
 
 El equipo quiere dividir las tareas pendientes; el reparto aún está por acordar.
 El [plan de entrega](spdd/plan-entrega.md) enumera tareas, dependencias y
-decisiones abiertas. El repositorio es público para que ambas puedan
-consultarlo; para que Karen pueda subir cambios directamente falta su usuario
-exacto de GitHub y enviar la invitación de colaboradora.
+decisiones abiertas. El repositorio es público y Karen (Angélica) ya tiene
+acceso como colaboradora, según confirmó Maria.
 
 ## Qué construimos
 

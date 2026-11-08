@@ -44,8 +44,10 @@ reparto.
 | P05 | ¿Qué instrucciones y URL pública oficial se usarán para que el central alcance `g1`? | Docker por sí solo no publica el servidor en Internet. | Pendiente |
 | P07 | ¿Qué resultados reales dan las repeticiones? | Se necesitan observaciones para la tabla, gráfica, conclusiones y póster. | Pendiente hasta T07 |
 | P09 | ¿Qué contenido final se confirma para el guion y el póster? | No se deben completar con datos o afirmaciones no verificados. | Pendiente |
-| P10 | ¿Cuál es el usuario exacto de GitHub de Karen? | Se necesita para enviarle una invitación de colaboradora; el repositorio público ya permite leerlo y clonarlo. | Pendiente |
 | P11 | ¿Qué tareas acepta Maria y cuáles acepta Karen? | La estudiante pidió dividir el trabajo, pero los responsables todavía no se han acordado. | Pendiente |
+
+El permiso de colaboradora de Karen (Angélica) ya fue confirmado por la
+estudiante; no hace falta volver a solicitarlo.
 
 Las decisiones ya confirmadas del diseño y del experimento están en
 [decision-log.md](decision-log.md). Una pregunta pendiente no se transforma en
