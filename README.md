@@ -1,38 +1,122 @@
-# Proyecto de sistemas distribuidos
+# Chat distribuido
 
-Chat distribuido del grupo `g1`, con un cliente web sencillo, un servidor
-FastAPI y almacenamiento SQLite persistente.
+Proyecto académico de Sistemas Distribuidos: un chat web para el grupo `g1`,
+con servidor FastAPI, almacenamiento SQLite y una integración provisional con
+el servidor central del curso.
 
-## Requisitos para ejecutar
+> **Estado importante:** el chat local está implementado. La federación se
+> probó con un central simulado, pero todavía no se ha verificado contra el
+> contrato OpenAPI ni contra el servidor real del curso. No se incluyen
+> resultados inventados de experimento o interoperabilidad.
 
-- Docker Desktop instalado y en ejecución, con Docker Compose disponible.
-- Una URL pública para este servidor y la URL del servidor central para activar
-  la federación. Sin `CENTRAL_URL`, el servidor funciona en modo local.
+## Entregables de la guía
+
+| Entregable | Dónde está | Estado |
+|---|---|---|
+| Servidor y cliente del chat | [`app/`](app/) | Implementados |
+| Ejecución con Docker Compose | [`Dockerfile`](Dockerfile), [`docker-compose.yml`](docker-compose.yml) | Configuración validada; imagen aún no construida |
+| Instrucciones y variables de entorno | Este README, [`.env.example`](.env.example) | Disponibles; federación sujeta a validación |
+| Diagrama de arquitectura | [`docs/arquitectura.md`](docs/arquitectura.md) | Disponible |
+| Pruebas automatizadas | [`tests/`](tests/) | 13 pruebas pasaron en la última validación; usan federación simulada |
+| Especificación OpenAPI y prueba de conformidad | Aún no disponibles en los materiales revisados | Pendiente |
+| Experimento: script, datos y resultados de al menos tres repeticiones | Aún no preparados | Pendiente; no se reportan resultados sin ejecutarlo |
+| Bitácora de interoperabilidad | Aún no preparada | Pendiente de probar con el central y otro grupo |
+| Guion y póster final | Aún no preparados | Pendiente; deben basarse en evidencias reales |
+
+La lista completa de requisitos y sus páginas de origen está en
+[CHAT-001-requisitos.md](spdd/requirements/CHAT-001-requisitos.md).
+
+## Estado y flujo SPDD
+
+El proyecto sigue SPDD (*Structured Prompt-Driven Development*): se registran
+los requisitos, se analizan hechos y pendientes, se aprueba el canvas antes de
+implementar y se prueba cada etapa. Si cambia un requisito, primero se actualiza
+el canvas y luego el código.
+
+```mermaid
+flowchart LR
+    R["1 · Requisitos<br/>borrador para revisar"] --> A["2 · Análisis<br/>aprobado"]
+    A --> C["3 · Canvas REASONS<br/>aprobado"]
+    C --> I["4 · Implementación<br/>local completa<br/>federación provisional"]
+    I --> T["5 · Pruebas<br/>13 pasan con central simulado"]
+    T --> V["6 · Validación real<br/>OpenAPI, Docker,<br/>central y experimento<br/>pendiente"]
+    V -. "cambia el comportamiento:<br/>actualizar primero el canvas" .-> C
+```
+
+Los documentos SPDD y el log de decisiones están organizados en
+[`spdd/`](spdd/README.md). El proyecto está publicado en la rama
+[`compartir/proyecto-inicial`](https://github.com/Maria-Fernanda-Ruiz/sistemasproyecto/tree/compartir/proyecto-inicial).
+
+## Integrantes
+
+La estudiante y Angélica trabajan juntas en las etapas del proyecto. No se han
+asignado áreas de trabajo separadas. El repositorio es público para que ambas
+puedan consultarlo; Angélica no ha sido invitada como colaboradora.
+
+## Qué construimos
+
+El navegador usa la API local del servidor del grupo. Ese servidor guarda
+usuarios y mensajes en SQLite y, cuando se configura, se comunica con el
+servidor central para compartir y recuperar mensajes de `#general`.
+
+```mermaid
+flowchart LR
+    B["Navegador<br/>cliente web"] -->|"API local"| G["Servidor del grupo<br/>FastAPI · g1"]
+    G --> DB[("SQLite<br/>historial persistente")]
+    G <-->|"protocolo del curso<br/>federación provisional"| C["Servidor central"]
+```
+
+La API entre el navegador y este servidor es propia del proyecto. El protocolo
+entre servidores debe cumplir la especificación del curso. La guía permite un
+cliente web sencillo, una sola sala compartida `#general` y almacenamiento
+persistente.
+
+| Método y ruta | Uso |
+|---|---|
+| `GET /` | Abre el cliente web. |
+| `POST /users` | Crea un usuario local. |
+| `POST /messages` | Envía un mensaje desde un usuario local. |
+| `GET /messages` | Lee el historial para el cliente. |
+| `GET /fed/health` | Informa el grupo y el reloj Lamport al central. |
+| `POST /fed/messages` | Recibe un mensaje reenviado por el central. |
+
+Más detalles del flujo: [diagrama de arquitectura](docs/arquitectura.md).
 
 ## Inicio rápido con Docker Compose
 
+Necesitas Docker Desktop instalado y en ejecución, con Docker Compose
+disponible.
+
 1. Abre esta carpeta en Visual Studio Code.
-2. Copia `.env.example` como `.env`.
-3. Para el modo local, deja `CENTRAL_URL` y `PUBLIC_URL` vacías.
-4. Abre **Terminal → Nuevo terminal** y ejecuta:
+2. Abre **Terminal → Nuevo terminal**.
+3. Copia el archivo de ejemplo de configuración:
+
+   ```sh
+   cp .env.example .env
+   ```
+
+4. Para ejecutar solo el chat local, deja `CENTRAL_URL` y `PUBLIC_URL` vacías.
+5. Inicia los servicios:
 
    ```sh
    docker compose up --build
    ```
 
-5. Cuando aparezca que Uvicorn está escuchando en el puerto `8000`, abre
+6. Cuando Uvicorn indique que escucha en el puerto `8000`, abre
    <http://localhost:8000>.
-6. Detén el servidor con `Ctrl+C`. Los datos quedan en el volumen Docker
-   `chat-data` y se conservan al reiniciar el contenedor.
+7. Para detenerlo, pulsa `Ctrl+C`.
 
-El comando `docker compose down` detiene y elimina el contenedor, pero conserva
-el volumen de datos. No uses `docker compose down -v` si quieres conservar el
-historial.
+Los datos se guardan en el volumen Docker `chat-data` y se conservan al
+reiniciar. `docker compose down` elimina el contenedor, pero conserva el
+volumen. No uses `docker compose down -v` si quieres conservar el historial.
 
-## Activar la conexión con el servidor central
+**Nota:** la configuración de Docker Compose fue validada, pero la imagen aún
+no se ha construido en este equipo porque Docker no estaba activo.
 
-Antes de habilitar la federación, configura `.env` con los datos proporcionados
-por el curso:
+## Configuración de la federación
+
+Para intentar conectar con el central, configura `.env` con los datos oficiales
+proporcionados por el curso:
 
 ```dotenv
 GROUP_ID=g1
@@ -40,34 +124,33 @@ CENTRAL_URL=
 PUBLIC_URL=
 ```
 
-- `GROUP_ID`: identificador asignado al grupo.
-- `CENTRAL_URL`: URL base del servidor central.
-- `PUBLIC_URL`: URL pública desde la que el central puede alcanzar este servidor.
-- `HEALTH_INTERVAL_SECONDS`: intervalo entre consultas de salud (5 s por defecto).
-- `HEALTH_FAILURE_THRESHOLD`: fallos consecutivos para marcar el central como
-  caído (3 por defecto).
-- `REGISTRATION_INTERVAL_SECONDS`: intervalo para renovar el registro (30 s).
-- `RETRY_INITIAL_SECONDS` y `RETRY_MAX_SECONDS`: espera exponencial inicial y
-  límite para reintentar mensajes (1 s y 30 s).
+| Variable | Uso | Valor por defecto |
+|---|---|---|
+| `GROUP_ID` | Identificador del grupo | `g1` |
+| `CENTRAL_URL` | Dirección base del servidor central | Vacío (modo local) |
+| `PUBLIC_URL` | Dirección pública desde la que el central llega a este servidor | Vacío |
+| `HEALTH_INTERVAL_SECONDS` | Intervalo entre consultas de salud | `5` |
+| `HEALTH_FAILURE_THRESHOLD` | Fallos para marcar el central como caído | `3` |
+| `REGISTRATION_INTERVAL_SECONDS` | Intervalo para renovar el registro | `30` |
+| `RETRY_INITIAL_SECONDS` | Espera inicial para reintentos | `1` |
+| `RETRY_MAX_SECONDS` | Límite de espera entre reintentos | `30` |
 
-Guarda `.env` y ejecuta de nuevo `docker compose up --build`. La URL pública
-debe apuntar al servicio de este proyecto en el puerto `8000` y permitir que el
-servidor central alcance sus rutas `/fed/health` y `/fed/messages`. La guía
-menciona Cloudflare, pero no se incluyeron aquí instrucciones ni credenciales
-para configurar un túnel.
+La URL pública debe permitir que el central alcance las rutas
+`/fed/health` y `/fed/messages`. La guía menciona Cloudflare, pero no se
+proporcionaron instrucciones ni credenciales para configurar un túnel.
 
 ### Contrato provisional
 
-La integración sigue las rutas y los campos resumidos en el PDF de la actividad.
-La guía indica que la especificación OpenAPI completa prevalece; como todavía no
-está disponible en los materiales revisados, el formato de respuesta de
-`GET /history?since=...` se implementó provisionalmente como una lista JSON
-directa. La interoperabilidad con el central no se considera verificada hasta
-probar contra esa especificación y el servicio real.
+La integración sigue las rutas y los campos resumidos en el PDF. La guía indica
+que la especificación OpenAPI completa prevalece. Como no estaba entre los
+materiales revisados, `GET /history?since=...` se implementó provisionalmente
+suponiendo que responde con una lista JSON directa. No se debe considerar
+verificada la interoperabilidad hasta probarla contra la especificación y el
+servicio real.
 
 ## Ejecución local sin Docker
 
-Con Python 3.12 o posterior, desde la carpeta del proyecto:
+Se requiere Python 3.12 o posterior. Desde la carpeta del proyecto:
 
 ```sh
 python -m venv .venv
@@ -83,39 +166,26 @@ python -m uvicorn app.main:app --reload
 Abre <http://localhost:8000>. Los datos se guardan por defecto en
 `data/chat.sqlite3`. Para cambiar esa ruta, configura `CHAT_DB_PATH`.
 
-## Pruebas automatizadas
+## Pruebas
 
 ```sh
 python -m unittest discover -s tests -v
 ```
 
-Las pruebas usan un central simulado para revisar el registro, el envío,
-reintentos, recuperación del historial, deduplicación, reloj Lamport y
-migración de la base de datos. No sustituyen la prueba de interoperabilidad con
-el central del curso.
-
-## Rutas del servidor de grupo
-
-| Método y ruta | Uso |
-|---|---|
-| `GET /` | Abre el cliente web. |
-| `POST /users` | Crea un usuario local. |
-| `POST /messages` | Envía un mensaje desde un usuario local. |
-| `GET /messages` | Lee el historial para el cliente. |
-| `GET /fed/health` | Informa el grupo y el reloj Lamport al central. |
-| `POST /fed/messages` | Recibe un mensaje reenviado por el central. |
-
-El flujo entre componentes se muestra en [docs/arquitectura.md](docs/arquitectura.md).
-Los requisitos, decisiones y pendientes SPDD están en [spdd/](spdd/).
+Las pruebas revisan usuarios, mensajes, persistencia, migración, registro,
+reintentos, recuperación del historial, deduplicación y reloj Lamport. Las
+pruebas de federación usan un central simulado: no sustituyen la prueba con el
+servidor del curso.
 
 ## Estado de entrega
 
-- Implementados: cliente web, API local, persistencia SQLite, integración
-  federada provisional y pruebas automatizadas.
-- Validación local: pruebas unitarias y sintaxis de Docker Compose.
-- Pendientes: contrastar el protocolo con OpenAPI, ejecutar Docker cuando el
-  daemon esté activo, configurar la URL pública, probar con el central y otro
-  grupo, y realizar el experimento con datos reales.
-- Los resultados del experimento, la bitácora de interoperabilidad, la salida
-  de conformidad, el guion y el póster deben completarse con evidencias reales;
-  no se incluyen resultados inventados.
+Antes de entregar todavía se necesita:
+
+- obtener y seguir la especificación OpenAPI y el script oficial de conformidad;
+- construir y ejecutar la imagen con Docker;
+- configurar una URL pública y probar con el central y otro grupo;
+- realizar al menos tres repeticiones del experimento y guardar script, datos,
+  tabla y gráfica;
+- documentar la interoperabilidad en una bitácora;
+- completar el guion y el póster en la plantilla original, usando resultados
+  reales.

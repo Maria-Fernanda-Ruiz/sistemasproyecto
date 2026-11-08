@@ -10,8 +10,8 @@ Las decisiones confirmadas registran elecciones del equipo; las decisiones propu
 | D01 | Nombre visible del proyecto | “Proyecto de sistemas distribuidos”. | Confirmada | Elección de la estudiante. |
 | D02 | Nombre técnico del repositorio/carpeta | `proyecto-sistemas-distribuidos`. | Confirmada | El nombre técnico no usa espacios; el título visible conserva los espacios. |
 | D03 | Descripción | “Proyecto académico de sistemas distribuidos: requisitos, análisis, póster y código, organizados con metodología SPDD”. | Confirmada | Texto elegido por la estudiante. |
-| D04 | Visibilidad | Privada. | Confirmada | Elección de la estudiante. |
-| D05 | Control de GitHub | La estudiante gestionará ramas, merges, PRs y publicación desde Visual Studio Code. El repositorio local tiene configurado `origin` hacia la URL indicada por la estudiante; no se han hecho commits ni push. La existencia y visibilidad del remoto no se afirman como verificadas. | Confirmada | Instrucción expresa de la estudiante. |
+| D04 | Visibilidad | Inicialmente privada; cambiada a pública el 8 de noviembre de 2026 para compartir el proyecto con Angélica. | Reemplazada | La estudiante autorizó hacer público el repositorio. |
+| D05 | Control y publicación de GitHub | La estudiante conserva el control del repositorio. Por petición expresa, la versión inicial se publicó en `compartir/proyecto-inicial` de `Maria-Fernanda-Ruiz/sistemasproyecto`; no se hizo push directo a `main`. | Confirmada | Instrucciones de la estudiante y autorización de publicación. |
 | D06 | Integrantes | Dos integrantes: la estudiante y Angélica; ambas trabajan en código. | Confirmada | La estudiante indicó el equipo y que ambas programan. |
 | D07 | Identificador de grupo | `g1`. | Confirmada; disponibilidad confirmada por la estudiante | La guía usa identificadores cortos como `g1` (pág. 2); el curso/equipo confirmó que este valor está disponible. |
 | D08 | Pregunta experimental | Usar la pregunta de la guía: «¿Cuántos mensajes se pierden o se duplican cuando el servidor del grupo se cae durante unos segundos?» | Confirmada | Se elige una de las preguntas propuestas en la guía (pág. 5); conecta el experimento con tolerancia a fallos. |
@@ -30,7 +30,7 @@ Las decisiones confirmadas registran elecciones del equipo; las decisiones propu
 | D21 | Persistencia | SQLite en un volumen Docker. | Confirmada | SQLite es una alternativa permitida por la guía (pág. 3); elección del equipo. |
 | D22 | Materiales y límites | No se modifican las guías ni la plantilla sin aprobación previa; no se escribe código de aplicación hasta aprobar análisis y canvas. | Confirmada | Instrucciones de trabajo de la estudiante y flujo SPDD acordado. |
 | D23 | Repositorio de referencia | Leer `gszhangwei/open-spdd` como referencia metodológica; no modificarlo ni copiar su proyecto de ejemplo o sus decisiones. | Confirmada | Instrucción expresa de la estudiante. |
-| D24 | Borradores SPDD | Crear requisitos, análisis, canvas REASONS y este log dentro de la carpeta nueva. | Confirmada | La estudiante autorizó crear estos cuatro documentos borrador. |
+| D24 | Documentos SPDD iniciales | Crear requisitos, análisis, canvas REASONS y este log dentro de la carpeta del proyecto. | Confirmada | La estudiante autorizó crear estos cuatro documentos iniciales. |
 | D25 | Protocolo completo del central | Avanzar con el resumen de la guía y señalar lo que falta validar; no afirmar interoperabilidad comprobada sin evidencia. | Confirmada | La estudiante pidió avanzar para la entrega próxima. |
 | D26 | Alcance del cliente | Limitar el frontend a un cliente web sencillo para enviar y leer mensajes de `#general`; no crear vistas adicionales de tablero. | Confirmada; reemplaza D17 | La estudiante pidió seguir el alcance del PDF (pág. 2), que admite una página web mínima. |
 | D27 | Forma de trabajo del equipo | La estudiante y Angélica trabajarán juntas en las etapas, incluida la programación, en vez de dividirse el proyecto en dos áreas fijas. | Confirmada | Preferencia del equipo. Los commits deben reflejar el trabajo real de ambas. |
@@ -41,6 +41,7 @@ Las decisiones confirmadas registran elecciones del equipo; las decisiones propu
 | D32 | Primera etapa local | Implementar el chat local: usuarios, mensajes, SQLite persistente y cliente web sencillo con rutas locales separadas del protocolo central. | Implementada | La estudiante aprobó la propuesta concreta de archivos y rutas antes de los cambios. |
 | D33 | Federación provisional | Implementar registro, heartbeat, envío y recepción, Lamport, deduplicación, reintentos y recuperación de historial con los campos y rutas resumidos en el PDF. La respuesta de historial se trata como lista JSON directa provisional. | Implementada; requiere validación externa | La estudiante aprobó avanzar según el PDF y eligió el supuesto de respuesta directa para `GET /history`. No se afirma interoperabilidad real. |
 | D34 | Entrega de documentación técnica | Añadir README de ejecución y variables de entorno y un diagrama de arquitectura; marcar en ellos las validaciones todavía pendientes. | Borradores creados | Son entregables indicados por la guía (págs. 7–8); no incluyen resultados experimentales ni de interoperabilidad no obtenidos. |
+| D35 | Organización SPDD | Organizar los documentos como requisitos, análisis, prompt/canvas por historia, plantilla REASONS e índice con enlaces, siguiendo la forma documental observada en `agregador-resiliente`; no trasladar su contenido ni sus decisiones. | Confirmada el 8 de noviembre de 2026 | La estudiante autorizó adaptar la organización después de revisar ese repositorio en modo solo lectura. |
 
 ## Preguntas pendientes
 
@@ -58,9 +59,10 @@ Las decisiones confirmadas registran elecciones del equipo; las decisiones propu
 
 ## Registro de cambios
 
-- Se crea este log como borrador SPDD. No implica aprobación del análisis, del canvas ni del código.
+- Se crea este log como registro vivo de decisiones y preguntas; cada aprobación o cambio se fecha para distinguir el estado actual del histórico.
 - Se limita el cliente a una página sencilla de chat conforme al alcance elegido por la estudiante; la propuesta anterior de tablero queda reemplazada.
 - El canvas REASONS queda aprobado.
 - El análisis queda aprobado el 7 de noviembre de 2026.
 - Se implementan chat local y federación provisional. Las 13 pruebas automatizadas pasan; la configuración de Compose valida, pero el build no se ejecutó porque Docker no está activo.
-- README y diagrama de arquitectura añadidos como borradores. Pruebas con central simulado no equivalen a interoperabilidad con el central del curso.
+- README y diagrama de arquitectura disponibles. Pruebas con central simulado no equivalen a interoperabilidad con el central del curso.
+- El repositorio es público y la rama `compartir/proyecto-inicial` contiene la versión inicial; no se ha invitado a Angélica como colaboradora.

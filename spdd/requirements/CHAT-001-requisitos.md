@@ -83,10 +83,10 @@ La guía pide incluir el libro de texto en las referencias del póster (pág. 8)
 
 ## Entrega y trabajo del equipo
 
-El equipo está formado por dos integrantes: la estudiante y Angélica. Ambas trabajarán juntas en las etapas, incluida la programación; los commits deberán reflejar el trabajo real de ambas. No había código previo; la primera etapa partió desde cero.
+El equipo está formado por dos integrantes: la estudiante y Angélica. Ambas trabajarán juntas en las etapas, incluida la programación; los commits deberán reflejar el trabajo real de ambas. No había código previo al inicio de la implementación; el código actual se encuentra en la carpeta `app/`.
 
-La propiedad del repositorio y las operaciones de GitHub (ramas, merges y publicación) quedan a cargo de la estudiante desde Visual Studio Code. No se invitarán colaboradores desde este trabajo.
+El repositorio `Maria-Fernanda-Ruiz/sistemasproyecto` es público. La versión inicial está publicada en la rama `compartir/proyecto-inicial`; Angélica puede verla y clonarla. No se ha enviado una invitación de colaboradora.
 
 ## Estado de implementación
 
-La primera etapa local ya está implementada: creación de usuarios, envío y lectura de mensajes de `#general`, persistencia SQLite y cliente web sencillo. La conexión con el servidor central, las pruebas de conformidad y la interoperabilidad todavía no están implementadas ni verificadas.
+El chat local y una integración federada provisional están implementados. Las pruebas automatizadas usan un central simulado; la conexión con el servidor central real, la conformidad con OpenAPI y la interoperabilidad todavía no están verificadas.

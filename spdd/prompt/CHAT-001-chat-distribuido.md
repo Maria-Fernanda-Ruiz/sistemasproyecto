@@ -1,7 +1,14 @@
 # Canvas REASONS
 
-**Estado:** aprobado por la estudiante el 7 de noviembre de 2026.  
+**Estado:** aprobado por la estudiante el 7 de noviembre de 2026; implementación local y federación provisional realizadas.
 Este canvas enlaza decisiones y requisitos. Lo marcado como “pendiente” no autoriza a inventar detalles ni a implementar comportamiento no confirmado.
+
+| Campo | Valor |
+|---|---|
+| ID | CHAT-001 |
+| Requisitos | [CHAT-001-requisitos.md](../requirements/CHAT-001-requisitos.md) |
+| Análisis | [CHAT-001-analysis.md](../analysis/CHAT-001-analysis.md) |
+| Decisiones | [decision-log.md](../decision-log.md) |
 
 ## R — Requirements
 
@@ -11,8 +18,8 @@ Construir el servidor de chat de `g1` y un cliente web para que sus usuarios env
 
 ### Necesidades del curso
 
-- Cumplir persistencia, registro, comunicación HTTP/JSON, reintentos, deduplicación, Lamport, detección de fallos, recuperación y logs: `R04`–`R14` en `requisitos.md`.
-- Entregar código, Docker Compose, README, diagrama, script/datos del experimento, evidencias de conformidad e interoperabilidad, historial de commits, póster y sustentación: `R15`–`R19`.
+- Cumplir persistencia, registro, comunicación HTTP/JSON, reintentos, deduplicación, Lamport, detección de fallos, recuperación y logs: `R04`–`R14` en [CHAT-001-requisitos.md](../requirements/CHAT-001-requisitos.md).
+- Entregar código, Docker Compose, README, diagrama, script/datos del experimento, evidencias de conformidad e interoperabilidad, historial de commits, póster y sustentación: `R15`–`R19` en [CHAT-001-requisitos.md](../requirements/CHAT-001-requisitos.md).
 - La interfaz de usuario es una página web sencilla permitida por `R03`; el tablero extendido es una decisión del equipo.
 
 ### Experimento
@@ -82,19 +89,18 @@ La estructura inicial del código y los contenedores quedó aprobada junto con l
 
 ## O — Operations
 
-Orden propuesto, todavía pendiente de aprobación:
+Orden de trabajo acordado y estado actual:
 
-1. Preparar la configuración de `g1` y aclarar cómo hacer accesible la URL del servidor al central.
-2. Revisar la especificación completa del protocolo; si no está disponible, marcar los detalles de interoperabilidad que solo se basen en el resumen.
-3. **Completado:** diseñar la estructura local y las rutas `POST /users`, `POST /messages` y `GET /messages`, separadas del protocolo central.
-4. **Completado:** implementar usuarios e historial local persistente con SQLite.
-5. **Implementado provisionalmente:** registro central, envío/recepción, Lamport, deduplicación, reintentos, heartbeat y recuperación según el resumen del PDF. Las pruebas actuales usan un central simulado; validar el contrato OpenAPI y la interoperabilidad real sigue pendiente.
-6. **Completado:** construir el cliente web sencillo de `#general`, mostrando nombre y grupo junto a cada mensaje.
-7. Pendiente: crear el script repetible para el experimento; realizar al menos 3 repeticiones y guardar datos reales.
-8. **Parcial:** las pruebas automatizadas locales y de federación simulada pasan; ejecutar conformidad e interoperabilidad cuando los materiales/servicio estén disponibles.
-9. **Parcial:** README y diagrama de arquitectura creados como borradores. Completar la bitácora, datos del experimento, salida de conformidad, guion y contenido del póster dentro de la plantilla original cuando haya evidencias y aprobación.
+1. **Completado:** reunir la guía, los materiales y las decisiones iniciales; registrar hechos y pendientes en requisitos y análisis.
+2. **Completado:** aprobar el análisis y este canvas antes de implementar código de aplicación.
+3. **Completado:** construir el chat local: servidor FastAPI, usuarios, mensajes, persistencia SQLite y cliente web.
+4. **Completado provisionalmente:** añadir registro, envío/recepción, Lamport, deduplicación, reintentos, health y recuperación conforme al resumen del PDF. Se probaron con un central simulado; falta cotejar OpenAPI y servicio real.
+5. **Pendiente:** verificar el contrato OpenAPI y el acceso de red; corregir primero el canvas si cambian requisitos o comportamiento acordado y luego el código.
+6. **Pendiente:** ejecutar el sistema con Docker y las verificaciones de conformidad e interoperabilidad disponibles; documentar resultados observados.
+7. **Pendiente:** implementar y ejecutar el experimento de al menos tres repeticiones; guardar script y datos reales.
+8. **Pendiente:** completar la bitácora, el guion y el póster en su plantilla original, usando evidencias reales.
 
-No se empieza el código de aplicación hasta que el equipo apruebe explícitamente el análisis y este canvas.
+Las 13 pruebas automatizadas pasaron con el entorno local y `docker compose config` validó la configuración. La imagen no se construyó porque Docker no estaba activo. Estos resultados no sustituyen la prueba con el central del curso.
 
 La disponibilidad de un servidor de otro equipo para enviar mensajes durante la caída aún se desconoce. No se debe reemplazar el método indicado por la guía por una simulación sin etiquetarla claramente y revisar primero si cumple el objetivo del curso.
 
@@ -114,12 +120,12 @@ Las etapas local y de federación provisional se implementaron después de aprob
 ## S — Safeguards
 
 - No cambiar la guía ni la plantilla original. Cualquier edición propuesta para el póster debe explicarse y aprobarse antes.
-- La estudiante gestiona GitHub desde Visual Studio Code. No se han hecho commits ni push; la carpeta local solo tiene configurado el remoto `origin`.
-- No invitar colaboradores ni publicar directamente a `main`.
-- No modificar ni copiar el proyecto de ejemplo de `gszhangwei/open-spdd`; fue consultado solo como referencia metodológica.
+- La estudiante autorizó hacer público el repositorio y publicar la versión inicial en `compartir/proyecto-inicial`; no se publicó directamente a `main`.
+- No se ha invitado a Angélica como colaboradora. El repositorio público permite que lo vea y lo clone.
+- No modificar ni copiar proyectos de referencia; `agregador-resiliente` se consultó en modo solo lectura para observar su organización SPDD.
 - No asumir que la especificación OpenAPI está disponible: no se encontró entre los materiales actuales.
 - No inventar campos, códigos de estado, autenticación, rutas o semántica del protocolo más allá de lo expresamente resumido por la guía.
 - No llamar “en vivo” a una lista de usuarios: no se mostrará lista lateral de participantes.
 - Los valores experimentales de 5 segundos o 1 mensaje por segundo son elecciones del equipo, no requisitos indicados por la guía.
 - No presentar datos esperados como resultados. Los resultados solo se completan después de ejecutar las repeticiones.
-- El análisis y el canvas siguen siendo borradores hasta la aprobación expresa del equipo.
+- El análisis y este canvas fueron aprobados antes de implementar la aplicación; deben actualizarse antes del código si cambian los requisitos.

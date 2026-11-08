@@ -5,7 +5,7 @@
 
 - `proyecto_final_v2 (1).pdf`: enunciado del proyecto de Sistemas Distribuidos.
 - `Template SystemsFest(1) (3).pptx`: plantilla de póster.
-- Referencia de lectura: `javierchacon262/agregador-resiliente` (no se modificó).
+- Repositorio `javierchacon262/agregador-resiliente`: consultado en modo solo lectura como referencia SPDD; no se modificó.
 
 ## 1. Comprensión del problema
 
@@ -30,7 +30,7 @@ La guía describe una arquitectura en estrella y una sola sala global `#general`
 
 ### Guía PDF
 
-Se revisó el texto de sus 10 páginas de contenido. Es la fuente para los requisitos enumerados en `requisitos.md`.
+Se revisó el texto de sus 10 páginas de contenido. Es la fuente para los requisitos enumerados en [CHAT-001-requisitos.md](../requirements/CHAT-001-requisitos.md).
 La guía pide citar el libro de texto en el póster (pág. 8). La estudiante compartió `Understanding Distributed Systems 2nd edition.pdf`; sus páginas preliminares identifican a Roberto Vitillo como autor, indican segunda edición y versión 2.0.0, fechada en marzo de 2022. Referencia bibliográfica provisional: Vitillo, R. (2022). *Understanding Distributed Systems: What Every Developer Should Know About Large Distributed Applications* (2.ª ed., versión 2.0.0). El formato final dependerá de las instrucciones del curso.
 
 ### Plantilla PowerPoint
@@ -41,18 +41,18 @@ Todavía no hay contenido del proyecto colocado en la plantilla, por lo que no s
 
 ### Código y otros materiales
 
-No se encontró código fuente, guion, resultados de experimento, bitácora ni una versión del póster con contenido entre los materiales disponibles en la carpeta de trabajo revisada. La guía OpenAPI y el script de conformidad tampoco se encontraron.
+En la revisión inicial no había código fuente, guion, resultados de experimento, bitácora ni una versión del póster con contenido entre los materiales disponibles. Desde entonces se implementaron el cliente web, el servidor FastAPI, SQLite y una integración federada provisional; hay pruebas automatizadas para chat y federación simulada. La especificación OpenAPI completa y el script de conformidad siguen sin estar disponibles. Tampoco se han producido resultados reales del experimento, bitácora de interoperabilidad, guion ni póster con contenido.
 
 ### Repositorio de referencia
 
-`agregador-resiliente` se leyó solo como referencia de organización e interfaz. Ese proyecto agrega información de servicios externos; este proyecto es un chat distribuido que debe cumplir el protocolo del curso. Sus decisiones, código y contenido no se trasladarán al proyecto nuevo.
+`javierchacon262/agregador-resiliente` se consultó en modo solo lectura como referencia de organización SPDD. Su README sirve de mapa de entregables y su carpeta `spdd/` separa análisis, prompts/canvas y una plantilla REASONS. Ese proyecto agrega información de servicios externos; este proyecto es un chat distribuido que debe cumplir el protocolo del curso. No se trasladan su código ni sus decisiones.
 
 ## 4. Decisiones confirmadas por el equipo
 
 - Nombre técnico propuesto para el nuevo repositorio: `proyecto-sistemas-distribuidos`; nombre visible: “Proyecto de sistemas distribuidos”.
 - Descripción: “Proyecto académico de sistemas distribuidos: requisitos, análisis, póster y código, organizados con metodología SPDD”.
-- Visibilidad escogida: privada.
-- La estudiante quiere crear/gestionar el repositorio y sus ramas, merges y publicación desde Visual Studio Code. No se ha creado un repositorio remoto.
+- Visibilidad actual: pública, tras autorización expresa de la estudiante el 8 de noviembre de 2026.
+- El repositorio remoto `Maria-Fernanda-Ruiz/sistemasproyecto` existe. La versión inicial se publicó en `compartir/proyecto-inicial`; `main` no recibió ese push.
 - Equipo de dos integrantes: la estudiante y Angélica; ambas trabajan en código.
 - Código corto elegido y confirmado para el servidor: `g1`.
 - Experimento: tema de pérdidas/duplicados; se usa como pregunta de borrador la pregunta de la guía (pág. 5).
@@ -90,7 +90,9 @@ No se encontró código fuente, guion, resultados de experimento, bitácora ni u
 ## 7. Próximos pasos SPDD
 
 1. **Completado:** revisar los requisitos, el análisis y el canvas REASONS; ambos documentos de diseño quedaron aprobados.
-2. **Completado:** implementar el servidor local y el cliente web sencillo, con pruebas de usuarios, mensajes, reloj local y persistencia.
-3. Continuar por etapas conforme a Operations; presentar la propuesta concreta antes de cada nuevo cambio de código.
-4. Validar la conexión central con las rutas resumidas en la guía y cualquier especificación oficial disponible, sin afirmar interoperabilidad no probada.
-5. Ejecutar las verificaciones del curso cuando estén disponibles y registrar resultados reales, sin presentar pruebas no realizadas.
+2. **Completado:** implementar el servidor local, cliente web, persistencia SQLite y federación provisional; ejecutar pruebas automatizadas con un central simulado.
+3. **Pendiente:** obtener la especificación OpenAPI y el script de conformidad; contrastar el protocolo y registrar cualquier ajuste.
+4. **Pendiente:** ejecutar con Docker, configurar la URL pública y probar contra el central y otro grupo cuando el acceso esté disponible.
+5. **Pendiente:** completar el experimento con al menos tres repeticiones y datos reales, y preparar la bitácora, el guion y el póster.
+
+La federación y sus pruebas simuladas no demuestran interoperabilidad con el servidor real del curso.
