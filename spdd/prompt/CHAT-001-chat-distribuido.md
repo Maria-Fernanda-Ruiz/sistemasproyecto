@@ -1,6 +1,6 @@
 # Canvas REASONS
 
-**Estado:** aprobado por la estudiante el 7 de noviembre de 2026; implementación local y federación provisional realizadas.
+**Estado:** aprobado como base de diseño el 7 de noviembre de 2026; implementación local y federación provisional realizadas.
 Este canvas enlaza decisiones y requisitos. Lo marcado como “pendiente” no autoriza a inventar detalles ni a implementar comportamiento no confirmado.
 
 | Campo | Valor |
@@ -27,6 +27,8 @@ Construir el servidor de chat de `g1` y un cliente web para que sus usuarios env
 - Pregunta de la guía: «¿Cuántos mensajes se pierden o se duplican cuando el servidor del grupo se cae durante unos segundos?» (`R15`, guía, pág. 5).
 - Hipótesis: el equipo espera que después de la caída temporal `g1` recupere los mensajes enviados durante la interrupción y que cada mensaje aparezca una sola vez.
 - Diseño propuesto y elegido por el equipo: detener `g1` por 5 segundos mientras se envía 1 mensaje por segundo; al menos 3 repeticiones; presentar tabla y gráfica.
+- Borrador pendiente de confirmación: el emisor guarda los IDs enviados; tras reiniciar `g1`, se propone contar como perdido cada ID enviado durante la caída que no aparezca en su historial cuando termine la recuperación, y como duplicado cada log «Mensaje duplicado reconocido» de esa repetición. Se conservarían los IDs, el historial y los logs.
+- Limitación actual: por ahora no hay otro grupo disponible para prestar el servidor emisor. El método no se ha ejecutado y no hay resultados. La regla de conteo es una propuesta, no una decisión aprobada.
 - La tasa, duración y visualización son decisiones del equipo, no obligaciones numéricas de la guía.
 
 ## E — Entities
@@ -114,14 +116,13 @@ Las etapas local y de federación provisional se implementaron después de aprob
 - Escribir logs legibles con ID y marca Lamport para envío, recepción, reintento y descarte.
 - Conservar trazabilidad entre requisitos, decisiones, análisis, canvas, código y pruebas.
 - No afirmar que una prueba con otros grupos ocurrió si no se realizó.
-- Ambas integrantes deben poder explicar el código y participar en commits que reflejen su trabajo real; las tareas pendientes se asignarán después de acordar el reparto.
+- El equipo debe poder explicar el código. Las tareas y aportes se documentan como compartidos, sin asignar méritos o cargas individuales.
 - No copiar código del repositorio de referencia ni compartir código con otros grupos.
 
 ## S — Safeguards
 
 - No cambiar la guía ni la plantilla original. Cualquier edición propuesta para el póster debe explicarse y aprobarse antes.
-- La estudiante autorizó hacer público el repositorio y publicar la versión inicial en `compartir/proyecto-inicial`; no se publicó directamente a `main`.
-- La estudiante confirma que Karen (Angélica) ya tiene acceso como colaboradora del repositorio.
+- El repositorio es público y la versión inicial se publicó en `compartir/proyecto-inicial`; no se publicó directamente a `main`.
 - No modificar ni copiar proyectos de referencia; `agregador-resiliente` se consultó en modo solo lectura para observar su organización SPDD.
 - No asumir que la especificación OpenAPI está disponible: no se encontró entre los materiales actuales.
 - No inventar campos, códigos de estado, autenticación, rutas o semántica del protocolo más allá de lo expresamente resumido por la guía.
@@ -129,3 +130,4 @@ Las etapas local y de federación provisional se implementaron después de aprob
 - Los valores experimentales de 5 segundos o 1 mensaje por segundo son elecciones del equipo, no requisitos indicados por la guía.
 - No presentar datos esperados como resultados. Los resultados solo se completan después de ejecutar las repeticiones.
 - El análisis y este canvas fueron aprobados antes de implementar la aplicación; deben actualizarse antes del código si cambian los requisitos.
+- No atribuir ni comparar contribuciones personales a partir de nombres, commits, ediciones o archivos; describir el trabajo como responsabilidad compartida del equipo.

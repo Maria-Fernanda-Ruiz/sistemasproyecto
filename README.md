@@ -41,7 +41,7 @@ flowchart LR
     A --> C["3 · Canvas REASONS<br/>aprobado"]
     C --> I["4 · Implementación<br/>local completa<br/>federación provisional"]
     I --> T["5 · Pruebas<br/>13 pasan con central simulado"]
-    T --> V["6 · Validación real<br/>OpenAPI, Docker,<br/>central y experimento<br/>pendiente"]
+    T --> V["6 · Validación pendiente<br/>OpenAPI, central real,<br/>interoperabilidad y experimento"]
     V -. "cambia el comportamiento:<br/>actualizar primero el canvas" .-> C
 ```
 
@@ -49,18 +49,21 @@ Los documentos SPDD y el log de decisiones están organizados en
 [`spdd/`](spdd/README.md). El proyecto está publicado en la rama
 [`compartir/proyecto-inicial`](https://github.com/Maria-Fernanda-Ruiz/sistemasproyecto/tree/compartir/proyecto-inicial).
 
-## Integrantes
+## Integrantes registradas al inicio del proyecto
 
 | Integrante |
 |---|
 | Maria Fernanda Ruiz Velasquez |
 | Karen Angelica Sandoval Martinez |
 
-Maria y Karen trabajan en igualdad como equipo. El [plan de entrega](spdd/plan-entrega.md)
-organiza las tareas pendientes para que acuerden cómo coordinarlas; cualquier
-responsabilidad individual es solo para organizarse y no representa una
-diferencia en el trabajo o aporte de cada una. El repositorio es público y
-Karen ya tiene acceso como colaboradora, según confirmó Maria.
+El proyecto se trabaja en equipo. Las tareas y los aportes se consideran
+compartidos; este repositorio no asigna logros ni cargas de trabajo por persona.
+La lista identifica integrantes y no representa un reparto de tareas.
+Los nombres de las personas que se incorporaron después se agregarán cuando el
+equipo los comparta.
+No se deben inferir ni comparar contribuciones personales usando commits,
+ediciones, archivos o historial del repositorio.
+El [plan de entrega](spdd/plan-entrega.md) organiza los pendientes del equipo.
 
 ## Qué construimos
 

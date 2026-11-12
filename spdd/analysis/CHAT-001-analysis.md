@@ -1,6 +1,6 @@
 # Análisis del proyecto
 
-**Estado:** aprobado por la estudiante el 7 de noviembre de 2026.  
+**Estado:** aprobado como base de diseño el 7 de noviembre de 2026.
 **Materiales revisados en modo de solo lectura:**
 
 - `proyecto_final_v2 (1).pdf`: enunciado del proyecto de Sistemas Distribuidos.
@@ -51,9 +51,9 @@ En la revisión inicial no había código fuente, guion, resultados de experimen
 
 - Nombre técnico propuesto para el nuevo repositorio: `proyecto-sistemas-distribuidos`; nombre visible: “Proyecto de sistemas distribuidos”.
 - Descripción: “Proyecto académico de sistemas distribuidos: requisitos, análisis, póster y código, organizados con metodología SPDD”.
-- Visibilidad actual: pública, tras autorización expresa de la estudiante el 8 de noviembre de 2026.
+- Visibilidad actual: pública desde el 8 de noviembre de 2026.
 - El repositorio remoto `Maria-Fernanda-Ruiz/sistemasproyecto` existe. La versión inicial se publicó en `compartir/proyecto-inicial`; `main` no recibió ese push.
-- Equipo de dos integrantes: Maria Fernanda Ruiz Velasquez y Karen Angelica Sandoval Martinez. La estudiante indica que ambas trabajan en igualdad como equipo; las responsabilidades pendientes se coordinarán sin atribuir mayor carga o aporte a una de ellas.
+- Integrantes registradas al inicio del proyecto: Maria Fernanda Ruiz Velasquez y Karen Angelica Sandoval Martinez. El trabajo, las tareas y los aportes se consideran compartidos; no se atribuyen ni comparan por persona.
 - Código corto elegido y confirmado para el servidor: `g1`.
 - Experimento: tema de pérdidas/duplicados; se usa como pregunta de borrador la pregunta de la guía (pág. 5).
 - Hipótesis esperada: después de una caída temporal, `g1` recupera los mensajes enviados durante la interrupción y cada mensaje aparece una sola vez.
@@ -65,7 +65,7 @@ En la revisión inicial no había código fuente, guion, resultados de experimen
 - Persistencia con SQLite en volumen Docker.
 - Backend con Python y FastAPI.
 - Las decisiones anteriores no modifican requisitos impuestos por la guía; son elecciones del equipo.
-- No había código previo; la etapa local inicial partió desde cero. El plan de entrega organiza las tareas pendientes como trabajo compartido entre ambas integrantes.
+- No había código previo; la etapa local inicial partió desde cero. El plan de entrega organiza las tareas pendientes como trabajo compartido del equipo.
 
 ## 5. Suposiciones que no se deben tratar como hechos
 
@@ -89,10 +89,22 @@ En la revisión inicial no había código fuente, guion, resultados de experimen
 
 ## 7. Próximos pasos SPDD
 
-1. **Completado:** revisar los requisitos, el análisis y el canvas REASONS; ambos documentos de diseño quedaron aprobados.
+1. **Completado:** revisar los requisitos, el análisis y el canvas REASONS; los documentos de diseño quedaron aprobados.
 2. **Completado:** implementar el servidor local, cliente web, persistencia SQLite y federación provisional; ejecutar pruebas automatizadas con un central simulado.
 3. **Pendiente:** obtener la especificación OpenAPI y el script de conformidad; contrastar el protocolo y registrar cualquier ajuste.
-4. **Pendiente:** ejecutar con Docker, configurar la URL pública y probar contra el central y otro grupo cuando el acceso esté disponible.
+4. **Parcialmente completado:** Docker se verificó en modo local; falta configurar una URL pública y probar contra el central y otro grupo cuando el acceso esté disponible.
 5. **Pendiente:** completar el experimento con al menos tres repeticiones y datos reales, y preparar la bitácora, el guion y el póster.
 
 La federación y sus pruebas simuladas no demuestran interoperabilidad con el servidor real del curso.
+
+## 8. Preguntas abiertas que salieron del análisis
+
+Siguen abiertas `P02`, `P03`, `P04`, `P05`, `P07` y `P09`; el estado y la razón
+de cada una están en [decision-log.md](../decision-log.md). Se consultará una
+pregunta por vez, explicando para qué hace falta, las opciones y una
+recomendación. Ninguna opción se considera aprobada hasta que el equipo la
+confirme.
+
+Preguntas cerradas: `P01` (`D07`), `P06` (`D41`), `P08` (`D32`–`D33`) y `P11`
+(`D37`). Cuando se cierre una pregunta abierta, se agregará su decisión `D` y
+se actualizará este registro.
